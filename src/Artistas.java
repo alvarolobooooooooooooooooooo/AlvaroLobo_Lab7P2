@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author agln7
- */
-public class Artistas {
-    
+import java.util.ArrayList;
+
+public class Artistas extends Usuario{
+    private String nombre_artistico;
+    private ArrayList <Cancion> canciones = new ArrayList();
+    private ArrayList <Album> albumes = new ArrayList();
 }
