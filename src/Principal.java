@@ -873,6 +873,9 @@ public class Principal extends javax.swing.JFrame {
         jtree_CancionesAgregarALista.setModel(modelo);
         modelo.reload();
         JOptionPane.showMessageDialog(Panel_Usuario, "Single Agregado");
+        tf_tituloCancion_Single.setText("");
+        tf_duracionCancion_Single.setText("");
+        tf_NombreSingle.setText("");
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
