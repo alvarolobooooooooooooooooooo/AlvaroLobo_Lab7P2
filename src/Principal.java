@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -878,11 +879,12 @@ public class Principal extends javax.swing.JFrame {
         
             DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion_Artista.getModel();
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
-            DefaultTreeModel modelo2 = (DefaultTreeModel) jtree_CancionesAgregarALista.getModel();
-            DefaultMutableTreeNode raiz2 = (DefaultMutableTreeNode) modelo2.getRoot();
-            if (jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()) >= 0) {
-                JOptionPane.showMessageDialog(this, jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()));
-            }
+            DefaultMutableTreeNode nodeLista = (DefaultMutableTreeNode) jtree_ListasdeReproduccion_Artista.getLastSelectedPathComponent();
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode) jtree_CancionesAgregarALista.getLastSelectedPathComponent();
+            
+            nodeLista.add(node);
+            raiz.add(nodeLista);
+            jtree_ListasdeReproduccion_Artista.setModel(modelo);
     }//GEN-LAST:event_jToggleButton3MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
@@ -903,9 +905,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        if (jList1.getSelectedIndex() >= 0) {
-            JOptionPane.showMessageDialog(this, jList1.getSelectedIndex());
-        }
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree_lanzamientos_DescubrirMusica.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) jtree_lanzamientos_DescubrirMusica.getLastSelectedPathComponent();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
