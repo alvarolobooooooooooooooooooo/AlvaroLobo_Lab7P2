@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -54,7 +55,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        jtree_PlaylistUSuario = new javax.swing.JTree();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
@@ -95,6 +96,7 @@ public class Principal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -245,8 +247,8 @@ public class Principal extends javax.swing.JFrame {
         });
 
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("PlayLists");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        jtree_PlaylistUSuario.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jtree_PlaylistUSuario);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Mis Me Gusta" };
@@ -256,6 +258,11 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jList1);
 
         jButton2.setText("Nueva Playlist");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -638,8 +645,16 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setText("Me gusta");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(jMenuItem1);
+
+        jMenu1.setText("Anadir a PlayList");
+        jPopupMenu1.add(jMenu1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -860,13 +875,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
-        DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion_Artista.getModel();
-        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
-        DefaultTreeModel modelo2 = (DefaultTreeModel) jtree_CancionesAgregarALista.getModel();
-        DefaultMutableTreeNode raiz2 = (DefaultMutableTreeNode) modelo2.getRoot();
-        if (jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()) >= 0) {
-            JOptionPane.showMessageDialog(this, jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()));
-        }
+        
+            DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion_Artista.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+            DefaultTreeModel modelo2 = (DefaultTreeModel) jtree_CancionesAgregarALista.getModel();
+            DefaultMutableTreeNode raiz2 = (DefaultMutableTreeNode) modelo2.getRoot();
+            if (jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()) >= 0) {
+                JOptionPane.showMessageDialog(this, jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()));
+            }
     }//GEN-LAST:event_jToggleButton3MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
@@ -877,6 +893,20 @@ public class Principal extends javax.swing.JFrame {
         jtree_ListaAgregarUsuario.setModel(modelo);
         modelo.reload();
     }//GEN-LAST:event_jToggleButton2MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree_PlaylistUSuario.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        DefaultMutableTreeNode ListaReproduccion = new DefaultMutableTreeNode(new ListaReproduccion(JOptionPane.showInputDialog("Nombre de la Playlist")));
+        raiz.add(ListaReproduccion);
+        modelo.reload();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        if (jList1.getSelectedIndex() >= 0) {
+            JOptionPane.showMessageDialog(this, jList1.getSelectedIndex());
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -941,6 +971,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -972,7 +1003,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree3;
     private javax.swing.JTree jTree4;
     private javax.swing.JTree jTree5;
@@ -980,6 +1010,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTree jtree_CancionesAgregarALista;
     private javax.swing.JTree jtree_ListaAgregarUsuario;
     private javax.swing.JTree jtree_ListasdeReproduccion_Artista;
+    private javax.swing.JTree jtree_PlaylistUSuario;
     private javax.swing.JTree jtree_lanzamientos_DescubrirMusica;
     private javax.swing.JPasswordField pf_passlog;
     private javax.swing.JPasswordField pf_passreg;
@@ -996,4 +1027,5 @@ public class Principal extends javax.swing.JFrame {
     int cant_canciones = 0;
     DefaultMutableTreeNode albums = new DefaultMutableTreeNode("Albums");
     DefaultMutableTreeNode Singles = new DefaultMutableTreeNode("Singles");
+    private ArrayList megusta = new ArrayList();
 }
