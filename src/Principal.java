@@ -50,7 +50,7 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jtree_listasPublicas = new javax.swing.JTree();
+        jtree_ListaAgregarUsuario = new javax.swing.JTree();
         jPanel9 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -63,18 +63,15 @@ public class Principal extends javax.swing.JFrame {
         jtree_lanzamientos_DescubrirMusica = new javax.swing.JTree();
         Panel_Artista = new javax.swing.JDialog();
         jTabbedPane3 = new javax.swing.JTabbedPane();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jTree8 = new javax.swing.JTree();
         jPanel7 = new javax.swing.JPanel();
-        tf_tituloLista_Artista = new javax.swing.JTextField();
+        tf_titulolista_Artista = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jToggleButton2 = new javax.swing.JToggleButton();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jtree_ListasdeReproduccion = new javax.swing.JTree();
+        jtree_ListasdeReproduccion_Artista = new javax.swing.JTree();
         jToggleButton3 = new javax.swing.JToggleButton();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jtree_lanzamientosparalista = new javax.swing.JTree();
+        jtree_CancionesAgregarALista = new javax.swing.JTree();
         jPanel10 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         tf_duracionCancion_Single = new javax.swing.JTextField();
@@ -218,8 +215,8 @@ public class Principal extends javax.swing.JFrame {
         );
 
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
-        jtree_listasPublicas.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane10.setViewportView(jtree_listasPublicas);
+        jtree_ListaAgregarUsuario.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane10.setViewportView(jtree_ListaAgregarUsuario);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -340,30 +337,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Canciones");
-        jTree8.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane11.setViewportView(jTree8);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
-
-        jTabbedPane3.addTab("Canciones", jPanel5);
-
-        tf_tituloLista_Artista.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        tf_titulolista_Artista.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("Titulo de la Lista");
@@ -377,15 +351,20 @@ public class Principal extends javax.swing.JFrame {
         });
 
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Listas de Reproduccion");
-        jtree_ListasdeReproduccion.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane12.setViewportView(jtree_ListasdeReproduccion);
+        jtree_ListasdeReproduccion_Artista.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane12.setViewportView(jtree_ListasdeReproduccion_Artista);
 
         jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jToggleButton3.setText("Agregar Cancion");
+        jToggleButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton3MouseClicked(evt);
+            }
+        });
 
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
-        jtree_lanzamientosparalista.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane13.setViewportView(jtree_lanzamientosparalista);
+        jtree_CancionesAgregarALista.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane13.setViewportView(jtree_CancionesAgregarALista);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -403,7 +382,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addGap(28, 28, 28)
-                        .addComponent(tf_tituloLista_Artista, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_titulolista_Artista, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
@@ -419,7 +398,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(188, 188, 188)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tf_tituloLista_Artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_titulolista_Artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -810,42 +789,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
-        cant_canciones++;
-        DefaultTreeModel modelo = (DefaultTreeModel) jtree_lanzamientos_DescubrirMusica.getModel();
-        DefaultMutableTreeNode album = new DefaultMutableTreeNode(new Album(cant_canciones, tf_nombrealbum.getText(), ff_fechaLanzamiento.getText()));
-        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
-        raiz.add(albums);
-        raiz.add(Singles);
-        DefaultMutableTreeNode nodo_Album = (DefaultMutableTreeNode)raiz.getChildAt(0);
-        nodo_Album.add(album);
-        modelo.reload();
-        jtree_lanzamientosparalista.setModel(modelo);
-        Agregar_Cancion.pack();
-        Agregar_Cancion.setLocationRelativeTo(this);
-        Agregar_Cancion.setVisible(true);
-    }//GEN-LAST:event_jToggleButton1MouseClicked
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        JOptionPane.showMessageDialog(this, "Album Agregado");
-    }//GEN-LAST:event_jButton4MouseClicked
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-
-        DefaultTreeModel modelo = (DefaultTreeModel) jtree_lanzamientos_DescubrirMusica.getModel();
-        DefaultMutableTreeNode Single = new DefaultMutableTreeNode(new Singles(tf_NombreSingle.getText(), tf_duracionCancion_Single.getText()));
-        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
-        raiz.add(albums);
-        raiz.add(Singles);
-        DefaultMutableTreeNode cancion = new DefaultMutableTreeNode(new Cancion(tf_tituloCancion_Single.getText(),Double.parseDouble(tf_duracionCancion_Single.getText()), tf_NombreSingle.getText()));
-        DefaultMutableTreeNode padre = (DefaultMutableTreeNode) raiz.getChildAt(1);
-        padre.add(Single);
-        Single.add(cancion);
-        jtree_lanzamientosparalista.setModel(modelo);
-        modelo.reload();
-        JOptionPane.showMessageDialog(Panel_Usuario, "Single Agregado");
-    }//GEN-LAST:event_jButton3MouseClicked
-
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         
         DefaultTreeModel modelo = (DefaultTreeModel) jtree_lanzamientos_DescubrirMusica.getModel();
@@ -880,14 +823,59 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTabbedPane5MouseClicked
 
-    private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
-        DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion.getModel();
-        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)modelo.getRoot();
-        DefaultMutableTreeNode ListadeReproduccion = new DefaultMutableTreeNode(new ListaReproduccion(tf_tituloLista_Artista.getText()));
-        raiz.add(ListadeReproduccion);
-        jtree_listasPublicas.setModel(modelo);
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        JOptionPane.showMessageDialog(this, "Album Agregado");
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        cant_canciones++;
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree_lanzamientos_DescubrirMusica.getModel();
+        DefaultMutableTreeNode album = new DefaultMutableTreeNode(new Album(cant_canciones, tf_nombrealbum.getText(), ff_fechaLanzamiento.getText()));
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        raiz.add(albums);
+        raiz.add(Singles);
+        DefaultMutableTreeNode nodo_Album = (DefaultMutableTreeNode)raiz.getChildAt(0);
+        nodo_Album.add(album);
         modelo.reload();
-        
+        jtree_CancionesAgregarALista.setModel(modelo);
+        Agregar_Cancion.pack();
+        Agregar_Cancion.setLocationRelativeTo(this);
+        Agregar_Cancion.setVisible(true);
+    }//GEN-LAST:event_jToggleButton1MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree_lanzamientos_DescubrirMusica.getModel();
+        DefaultMutableTreeNode Single = new DefaultMutableTreeNode(new Singles(tf_NombreSingle.getText(), tf_duracionCancion_Single.getText()));
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        raiz.add(albums);
+        raiz.add(Singles);
+        DefaultMutableTreeNode cancion = new DefaultMutableTreeNode(new Cancion(tf_tituloCancion_Single.getText(),Double.parseDouble(tf_duracionCancion_Single.getText()), tf_NombreSingle.getText()));
+        DefaultMutableTreeNode padre = (DefaultMutableTreeNode) raiz.getChildAt(1);
+        padre.add(Single);
+        Single.add(cancion);
+        jtree_CancionesAgregarALista.setModel(modelo);
+        modelo.reload();
+        JOptionPane.showMessageDialog(Panel_Usuario, "Single Agregado");
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion_Artista.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        DefaultTreeModel modelo2 = (DefaultTreeModel) jtree_CancionesAgregarALista.getModel();
+        DefaultMutableTreeNode raiz2 = (DefaultMutableTreeNode) modelo2.getRoot();
+        if (jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()) >= 0) {
+            JOptionPane.showMessageDialog(this, jtree_CancionesAgregarALista.getRowForPath(jtree_CancionesAgregarALista.getSelectionPath()));
+        }
+    }//GEN-LAST:event_jToggleButton3MouseClicked
+
+    private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion_Artista.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        DefaultMutableTreeNode ListaReproduccion = new DefaultMutableTreeNode(new ListaReproduccion(tf_titulolista_Artista.getText()));
+        raiz.add(ListaReproduccion);
+        jtree_ListaAgregarUsuario.setModel(modelo);
+        modelo.reload();
     }//GEN-LAST:event_jToggleButton2MouseClicked
 
     /**
@@ -962,7 +950,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -970,7 +957,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane3;
@@ -991,11 +977,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTree jTree4;
     private javax.swing.JTree jTree5;
     private javax.swing.JTree jTree6;
-    private javax.swing.JTree jTree8;
-    private javax.swing.JTree jtree_ListasdeReproduccion;
+    private javax.swing.JTree jtree_CancionesAgregarALista;
+    private javax.swing.JTree jtree_ListaAgregarUsuario;
+    private javax.swing.JTree jtree_ListasdeReproduccion_Artista;
     private javax.swing.JTree jtree_lanzamientos_DescubrirMusica;
-    private javax.swing.JTree jtree_lanzamientosparalista;
-    private javax.swing.JTree jtree_listasPublicas;
     private javax.swing.JPasswordField pf_passlog;
     private javax.swing.JPasswordField pf_passreg;
     private javax.swing.JTextField tf_DuracionCancion_Album;
@@ -1004,7 +989,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_nombrealbum;
     private javax.swing.JTextField tf_tituloCancion_Album;
     private javax.swing.JTextField tf_tituloCancion_Single;
-    private javax.swing.JTextField tf_tituloLista_Artista;
+    private javax.swing.JTextField tf_titulolista_Artista;
     private javax.swing.JTextField tf_usuariolog1;
     private javax.swing.JTextField tf_usuarioreg;
     // End of variables declaration//GEN-END:variables
