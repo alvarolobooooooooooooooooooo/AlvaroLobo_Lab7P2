@@ -217,7 +217,7 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jTabbedPane1)
         );
 
-        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Listas Publicas");
         jtree_ListaAgregarUsuario.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane10.setViewportView(jtree_ListaAgregarUsuario);
 
@@ -666,7 +666,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel12.setText("Spoti");
+        jLabel12.setText("Spotify");
 
         jLabel13.setText("Contrasena");
 
@@ -699,7 +699,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(291, 291, 291))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(263, Short.MAX_VALUE)
+                .addContainerGap(230, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(324, 324, 324))
         );
