@@ -877,6 +877,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
         
+        try {
             DefaultTreeModel modelo = (DefaultTreeModel) jtree_ListasdeReproduccion_Artista.getModel();
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
             DefaultMutableTreeNode nodeLista = (DefaultMutableTreeNode) jtree_ListasdeReproduccion_Artista.getLastSelectedPathComponent();
@@ -884,7 +885,10 @@ public class Principal extends javax.swing.JFrame {
             
             nodeLista.add(node);
             raiz.add(nodeLista);
-            jtree_ListasdeReproduccion_Artista.setModel(modelo);
+            jtree_ListasdeReproduccion_Artista.setModel(modelo); 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(Panel_Artista, "Seleccione la Cancion y la lista a la que desea agregar.");
+        }
     }//GEN-LAST:event_jToggleButton3MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
